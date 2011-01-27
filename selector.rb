@@ -7,10 +7,10 @@ class Selector
     potentials = []
 
     # check the right
-    #     .] . .
-    #    .
-    #   .
-    # [.
+    #       .]
+    #      .
+    #     .
+    # . [.
     min = @array.min
     min_index = @array.index(min)
     min_array = @array[min_index..-1]
@@ -31,18 +31,18 @@ class Selector
     max_array_min_index = max_array.index(max_array_min)
     potentials << [difference([max_array_min, max]), [max_array_min_index, max_index]]
 
-    # check the middleA
+    # check the middle
     #   .   
-    # .  |    .] 
-    #    |  .  |
-    #    |     |
-    #    [.     |
-    #            .
+    # .  |   .] 
+    #    | . |
+    #    |   |
+    #   [.   |
+    #          .
     if min_index < max_index
       mid_array = @array[min_index+1..max_index-1]
       offset = min_index + 1
     else
-      mid_array = @array[max_index+1..min_index-1] if mid_array.empty?
+      mid_array = @array[max_index+1..min_index-1]
       offset = max_index + 1
     end
 
