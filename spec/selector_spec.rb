@@ -1,6 +1,6 @@
 require './selector'
 describe 'Selector' do
-  describe 'select_best_indices' do
+  describe 'select_best indices' do
     it 'should select min and max in an ordered set' do
       Selector.new([1,2,3,4,5]).select_best.should == [0,4]
     end
